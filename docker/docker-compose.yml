@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: GWP/CMS
+    build: ./CMS
+
+  backend:
+    image: example/database
+    build:
+      context: backend
+      dockerfile: ../docker.Dockerfile
+    container_name: GWP-CMS
+    restart: always
+   nginx:
+     image:  
